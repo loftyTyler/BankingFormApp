@@ -16,5 +16,10 @@ namespace BankingFormApp
         {
             InitializeComponent();
         }
+
+        private void usernameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
