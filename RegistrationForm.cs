@@ -26,18 +26,28 @@ namespace BankingFormApp
 
         private void registerNewAccountButton_Click(object sender, EventArgs e)
         {
-            string name, password;
+            string name, password, confirmPassword;
             name = regUsernameInput.Text;
             password = passwordInput.Text;
+            confirmPassword = passwordConfirmInput.Text;
+            LoginForm loginForm = new LoginForm();
+            if (confirmPassword == password)
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert into regDetails values('" + name + "','" + password + "');";
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Name:" + name + "\nPassword" + password);
+                MessageBox.Show("Record INSERTED successfully...");
+                this.Close();
+            } else
+            {
+                MessageBox.Show("Passwords do not match, try again.");
+            }
 
-            con.Open();
-            SqlCommand cmd= con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into regDetails values('" + name + "','" + password + "');";
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Name:" + name + "\nPassword" + password);
-            MessageBox.Show("Record INSERTED successfully...");
+            
         }
 
         private void RegistrationForm_Load(object sender, EventArgs e)

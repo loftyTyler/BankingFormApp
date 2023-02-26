@@ -80,6 +80,7 @@
             this.signInSubmit.TabIndex = 7;
             this.signInSubmit.Text = "SIGN IN";
             this.signInSubmit.UseVisualStyleBackColor = false;
+            this.signInSubmit.Click += new System.EventHandler(this.signInSubmit_Click);
             // 
             // bankLabel
             // 
