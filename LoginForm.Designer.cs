@@ -1,6 +1,6 @@
 ﻿namespace BankingFormApp
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.usernameInput = new System.Windows.Forms.TextBox();
             this.passwordInput = new System.Windows.Forms.TextBox();
             this.newuserInput = new System.Windows.Forms.Button();
             this.forgotPasswordInput = new System.Windows.Forms.Button();
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.signInSubmit = new System.Windows.Forms.Button();
+            this.bankLabel = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.passwordLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(162, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 30);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Bank of Developers";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // usernameInput
             // 
@@ -70,6 +60,7 @@
             this.newuserInput.TabIndex = 3;
             this.newuserInput.Text = "New User?";
             this.newuserInput.UseVisualStyleBackColor = true;
+            this.newuserInput.Click += new System.EventHandler(this.newuserInput_Click);
             // 
             // forgotPasswordInput
             // 
@@ -79,25 +70,6 @@
             this.forgotPasswordInput.TabIndex = 4;
             this.forgotPasswordInput.Text = "Forgot Password?";
             this.forgotPasswordInput.UseVisualStyleBackColor = true;
-            // 
-            // usernameTextBox
-            // 
-            this.usernameTextBox.Location = new System.Drawing.Point(217, 92);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(89, 22);
-            this.usernameTextBox.TabIndex = 5;
-            this.usernameTextBox.Text = "USERNAME";
-            this.usernameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.Location = new System.Drawing.Point(217, 148);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(89, 22);
-            this.passwordTextBox.TabIndex = 6;
-            this.passwordTextBox.Text = "PASSWORD";
-            this.passwordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // signInSubmit
             // 
@@ -109,36 +81,67 @@
             this.signInSubmit.Text = "SIGN IN";
             this.signInSubmit.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // bankLabel
+            // 
+            this.bankLabel.AutoSize = true;
+            this.bankLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bankLabel.Location = new System.Drawing.Point(170, 37);
+            this.bankLabel.Name = "bankLabel";
+            this.bankLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bankLabel.Size = new System.Drawing.Size(187, 25);
+            this.bankLabel.TabIndex = 8;
+            this.bankLabel.Text = "Bank Of Developers";
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.Location = new System.Drawing.Point(212, 83);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(102, 25);
+            this.usernameLabel.TabIndex = 9;
+            this.usernameLabel.Text = "Username";
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.Location = new System.Drawing.Point(212, 143);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(98, 25);
+            this.passwordLabel.TabIndex = 10;
+            this.passwordLabel.Text = "Password";
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 450);
+            this.Controls.Add(this.passwordLabel);
+            this.Controls.Add(this.usernameLabel);
+            this.Controls.Add(this.bankLabel);
             this.Controls.Add(this.signInSubmit);
-            this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.forgotPasswordInput);
             this.Controls.Add(this.newuserInput);
             this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.usernameInput);
-            this.Controls.Add(this.textBox1);
-            this.Name = "Form1";
+            this.Name = "LoginForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox usernameInput;
         private System.Windows.Forms.TextBox passwordInput;
         private System.Windows.Forms.Button newuserInput;
         private System.Windows.Forms.Button forgotPasswordInput;
-        private System.Windows.Forms.TextBox usernameTextBox;
-        private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button signInSubmit;
+        private System.Windows.Forms.Label bankLabel;
+        private System.Windows.Forms.Label usernameLabel;
+        private System.Windows.Forms.Label passwordLabel;
     }
 }
 
