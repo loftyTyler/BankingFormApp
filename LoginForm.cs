@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace BankingFormApp
 {
+
     public partial class LoginForm : Form
     {
         public LoginForm()
@@ -51,6 +52,8 @@ namespace BankingFormApp
             public string Name { get; set; }
             public string Password { get; set; }
         }
+
+        
         private void signInSubmit_Click(object sender, EventArgs e)
         {
             AccountDetails accountForm = new AccountDetails();

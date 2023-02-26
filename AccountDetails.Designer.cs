@@ -28,19 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.welcomeLabel = new System.Windows.Forms.Label();
+            this.welcomeOutput = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Form1
+            // welcomeLabel
+            // 
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Location = new System.Drawing.Point(162, 54);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(65, 16);
+            this.welcomeLabel.TabIndex = 0;
+            this.welcomeLabel.Text = "Welcome";
+            // 
+            // welcomeOutput
+            // 
+            this.welcomeOutput.AutoSize = true;
+            this.welcomeOutput.Location = new System.Drawing.Point(284, 54);
+            this.welcomeOutput.Name = "welcomeOutput";
+            this.welcomeOutput.Size = new System.Drawing.Size(44, 16);
+            this.welcomeOutput.TabIndex = 1;
+            this.welcomeOutput.Text = "Name";
+            this.welcomeOutput.TextChanged += new System.EventHandler(this.welcomeOutput_TextChanged);
+            // 
+            // AccountDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 450);
-            this.Name = "Form1";
+            this.Controls.Add(this.welcomeOutput);
+            this.Controls.Add(this.welcomeLabel);
+            this.Name = "AccountDetails";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label welcomeLabel;
+        private System.Windows.Forms.Label welcomeOutput;
     }
 }

@@ -16,5 +16,17 @@ namespace BankingFormApp
         {
             InitializeComponent();
         }
+        
+        private void welcomeOutput_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+
+
+        private void UpdateSelectedUserLabel(string username)
+        {
+            welcomeOutput.Text = username;
+        }
     }
 }
