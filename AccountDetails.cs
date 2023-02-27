@@ -22,11 +22,17 @@ namespace BankingFormApp
             
         }
 
-
-
-        private void UpdateSelectedUserLabel(string username)
+        private void button1_Click(object sender, EventArgs e)
         {
-            welcomeOutput.Text = username;
+
+        }
+        
+        private void AccountDetails_Load(object sender, EventArgs e)
+        {
+
+            string message = LoginForm.name;
+            MessageBox.Show(message);
+            welcomeOutput.Text = message;
         }
     }
 }

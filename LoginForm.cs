@@ -18,7 +18,9 @@ namespace BankingFormApp
         public LoginForm()
         {
             InitializeComponent();
+            
         }
+        //This code will create the connection the SQL database
         SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\telof\Documents\regDetailsDB.mdf;Integrated Security = True; Connect Timeout = 30");
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
@@ -28,17 +30,12 @@ namespace BankingFormApp
 
         private void newuserInput_Click(object sender, EventArgs e)
         {
-            
+            //This code will activate Registration Form
             RegistrationForm regForm = new RegistrationForm();
             this.Hide();
             regForm.ShowDialog();
             this.Show();
             
-            //regForm.Show();
-            //this.WindowState = FormWindowState.Minimized;
-
-
-
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -52,44 +49,50 @@ namespace BankingFormApp
             public string Name { get; set; }
             public string Password { get; set; }
         }
-
+        //Initiliazation of Variables for Global Use
+        public static string name;
+        public string password;
+        
         
         private void signInSubmit_Click(object sender, EventArgs e)
         {
+            //This code will create an instance of AccountDetails so it can show the AccountDetails Form
             AccountDetails accountForm = new AccountDetails();
-            string name, password;
+            //Giving name and password the user inputed values
             name = usernameInput.Text;
             password = passwordInput.Text;
+            //Establishment of Connection with SQL database
             con.Open();
+            //Creating a List to itterate through with each person in the database
             List<LoginFormData> registrations = new List<LoginFormData>();
+            //This is defining the SQL query as a string.  The query is selecting all columns by using '*' from the database
             string query = "SELECT * FROM regDetails;";
             SqlCommand command = new SqlCommand(query, con);
             SqlDataReader reader = command.ExecuteReader();
+            //While Loop to itertate through each person in the database then put it in the List of LoginFormData
             while (reader.Read())
             {
                 LoginFormData loginForm = new LoginFormData();
                 loginForm.Name = reader.GetString(0);
                 loginForm.Password = reader.GetString(1);
                 registrations.Add(loginForm);
+                //If statements to check if account details in database match up with the user input to login
                 if (name == loginForm.Name)
                 {
                     if (password== loginForm.Password)
                     {
-                        MessageBox.Show("Congrats you entered the correct info");
+                        MessageBox.Show("Login Successful!");
                         accountForm.Show();
                         this.WindowState = FormWindowState.Minimized;
-
                     } else
                     {
                         MessageBox.Show("Wrong Info");
                     }
                     
                 } 
-
-                
             }
             reader.Close();
             con.Close();
-        }
+        }       
     }
 }
