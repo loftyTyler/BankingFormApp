@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,8 +22,10 @@ namespace BankingFormApp
             
         }
         //This code will create the connection the SQL database
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\telof\source\repos\loftyTyler\BankingFormApp\regDetailsDB.mdf;Integrated Security=True;Connect Timeout=30");
-
+        //SQl for laptop
+        //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\telof\source\repos\loftyTyler\BankingFormApp\regDetailsDB.mdf;Integrated Security=True;Connect Timeout=30");
+        //Sql for Desktop
+        SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\telof\Documents\regDetailsDB.mdf;Integrated Security = True; Connect Timeout = 30");
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -40,7 +43,13 @@ namespace BankingFormApp
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            
+            using(Entity db = new Entity())
+            {
+                foreach (var prod in db.databaseTestings)
+                {
+                    MessageBox.Show($"{prod.name}  {prod.password}  {prod.fullName}  {prod.accountBalance}");
+                }
+            }
         }
 
      
@@ -49,7 +58,7 @@ namespace BankingFormApp
             public string Name { get; set; }
             public string Password { get; set; }
             public string FullName { get; set; }
-            public string AccountBalance { get; set; }
+            public decimal AccountBalance { get; set; }
         }
         //Initiliazation of Variables for Global Use
         public static string name;
@@ -78,7 +87,8 @@ namespace BankingFormApp
                 loginForm.Name = reader.GetString(0);
                 loginForm.Password = reader.GetString(1);
                 loginForm.FullName = reader.GetString(2);
-                loginForm.AccountBalance = reader.GetString(3);
+                loginForm.AccountBalance = reader.GetDecimal(3);
+
                 registrations.Add(loginForm);
                 //If statements to check if account details in database match up with the user input to login
                 if (name == loginForm.Name)

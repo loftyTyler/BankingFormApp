@@ -1,7 +1,0 @@
-INSERT INTO [dbo].[regDetails] ([name], [password]) VALUES (N'Bob', N'Saget')
-INSERT INTO [dbo].[regDetails] ([name], [password]) VALUES (N'Dug', N'Bor')
-INSERT INTO [dbo].[regDetails] ([name], [password]) VALUES (N'Earl', N'Cat')
-INSERT INTO [dbo].[regDetails] ([name], [password]) VALUES (N'Martha', N'Cat')
-INSERT INTO [dbo].[regDetails] ([name], [password]) VALUES (N'Paul', N'Cat')
-INSERT INTO [dbo].[regDetails] ([name], [password]) VALUES (N'Rudd', N'Cat')
-INSERT INTO [dbo].[regDetails] ([name], [password]) VALUES (N'tyler', N'lofty')
