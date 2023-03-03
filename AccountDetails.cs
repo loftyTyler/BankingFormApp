@@ -24,7 +24,8 @@ namespace BankingFormApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            CheckBalanceForm checkBalance = new CheckBalanceForm();
+            checkBalance.ShowDialog();
         }
         
         private void AccountDetails_Load(object sender, EventArgs e)

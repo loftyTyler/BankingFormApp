@@ -21,7 +21,7 @@ namespace BankingFormApp
             
         }
         //This code will create the connection the SQL database
-        SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\telof\Documents\regDetailsDB.mdf;Integrated Security = True; Connect Timeout = 30");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\telof\source\repos\loftyTyler\BankingFormApp\regDetailsDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -48,6 +48,8 @@ namespace BankingFormApp
         {
             public string Name { get; set; }
             public string Password { get; set; }
+            public string FullName { get; set; }
+            public string AccountBalance { get; set; }
         }
         //Initiliazation of Variables for Global Use
         public static string name;
@@ -66,7 +68,7 @@ namespace BankingFormApp
             //Creating a List to itterate through with each person in the database
             List<LoginFormData> registrations = new List<LoginFormData>();
             //This is defining the SQL query as a string.  The query is selecting all columns by using '*' from the database
-            string query = "SELECT * FROM regDetails;";
+            string query = "SELECT * FROM regDetails2;";
             SqlCommand command = new SqlCommand(query, con);
             SqlDataReader reader = command.ExecuteReader();
             //While Loop to itertate through each person in the database then put it in the List of LoginFormData
@@ -75,6 +77,8 @@ namespace BankingFormApp
                 LoginFormData loginForm = new LoginFormData();
                 loginForm.Name = reader.GetString(0);
                 loginForm.Password = reader.GetString(1);
+                loginForm.FullName = reader.GetString(2);
+                loginForm.AccountBalance = reader.GetString(3);
                 registrations.Add(loginForm);
                 //If statements to check if account details in database match up with the user input to login
                 if (name == loginForm.Name)
@@ -82,6 +86,8 @@ namespace BankingFormApp
                     if (password== loginForm.Password)
                     {
                         MessageBox.Show("Login Successful!");
+
+                        MessageBox.Show(loginForm.FullName + loginForm.AccountBalance);
                         accountForm.Show();
                         this.WindowState = FormWindowState.Minimized;
                     } else
