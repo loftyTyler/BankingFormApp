@@ -27,7 +27,7 @@ namespace BankingFormApp
         //SQl for laptop
         //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\telof\source\repos\loftyTyler\BankingFormApp\regDetailsDB.mdf;Integrated Security=True;Connect Timeout=30");
         //Sql for Desktop
-        SqlConnection con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=databaseTesting;Integrated Security=True");
+        //SqlConnection con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=databaseTesting;Integrated Security=True");
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -58,7 +58,7 @@ namespace BankingFormApp
         }
         //Initiliazation of Variables for Global Use
         public static string name;
-        public string password;
+        public static string password;
         
         
         private void signInSubmit_Click(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace BankingFormApp
                         {
                             MessageBox.Show("Login Successful!");
 
-                            MessageBox.Show(prod.name + prod.password);
+                            MessageBox.Show(prod.name + prod.password + prod.accountBalance);
                             accountForm.Show();
                             this.WindowState = FormWindowState.Minimized;
                         }

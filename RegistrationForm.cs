@@ -22,7 +22,7 @@ namespace BankingFormApp
         //SQl for Laptop
         // SqlConnection con=new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\telof\source\repos\loftyTyler\BankingFormApp\regDetailsDB.mdf;Integrated Security=True;Connect Timeout=30");
         //SQL for desktop
-        SqlConnection con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=databaseTesting;Integrated Security=True");
+        //SqlConnection con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=databaseTesting;Integrated Security=True");
 
 
 
