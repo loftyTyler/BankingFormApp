@@ -66,25 +66,33 @@ namespace BankingFormApp
             string fullUser = fullNameInput.Text;
             string accountBalanceString = moneyDepositInput.Text;
             // Next step is to do variable != null then only allow the bottom code to initiate if all are not null
-            if (password == confirmPassword)
+            databaseTesting database = new databaseTesting();
+            databaseTestingEntities data = new databaseTestingEntities();
+            var nameRow = data.databaseTestings.FirstOrDefault(a => a.name == regUsernameInput.Text);
+                         
+            if (nameRow != null)
             {
-                databaseTesting database = new databaseTesting();
-                databaseTestingEntities data = new databaseTestingEntities();
-                database.name = regUsernameInput.Text;
-                database.password = passwordInput.Text;
-                database.fullName = fullNameInput.Text;
-                
-                database.accountBalance = Decimal.Parse(accountBalanceString);
-                data.databaseTestings.Add(database);
-                data.SaveChanges();
-                MessageBox.Show("Record INSERTED successfully..");
-                this.Close();
-            } else
-            {
-                MessageBox.Show("Passwords do not match");
+                MessageBox.Show("Username is already taken.");
             }
-            
+            else
+            {
+                if (password == confirmPassword)
+                {
+                    database.name = regUsernameInput.Text;
+                    database.password = passwordInput.Text;
+                    database.fullName = fullNameInput.Text;
 
+                    database.accountBalance = Decimal.Parse(accountBalanceString);
+                    data.databaseTestings.Add(database);
+                    data.SaveChanges();
+                    MessageBox.Show("Record INSERTED successfully..");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Passwords do not match");
+                }
+            }                                                                              
         }
 
         private void RegistrationForm_Load(object sender, EventArgs e)

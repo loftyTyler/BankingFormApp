@@ -40,51 +40,53 @@
             this.fullNameInput = new System.Windows.Forms.TextBox();
             this.whatDepositMoneyLabel = new System.Windows.Forms.Label();
             this.moneyDepositInput = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // regUsernameInput
             // 
-            this.regUsernameInput.Location = new System.Drawing.Point(296, 229);
-            this.regUsernameInput.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.regUsernameInput.Location = new System.Drawing.Point(155, 101);
             this.regUsernameInput.Name = "regUsernameInput";
-            this.regUsernameInput.Size = new System.Drawing.Size(266, 38);
+            this.regUsernameInput.Size = new System.Drawing.Size(135, 22);
             this.regUsernameInput.TabIndex = 2;
             // 
             // passwordInput
             // 
-            this.passwordInput.Location = new System.Drawing.Point(296, 364);
-            this.passwordInput.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.passwordInput.Location = new System.Drawing.Point(155, 171);
             this.passwordInput.Name = "passwordInput";
-            this.passwordInput.Size = new System.Drawing.Size(266, 38);
+            this.passwordInput.Size = new System.Drawing.Size(135, 22);
             this.passwordInput.TabIndex = 4;
             // 
             // passwordConfirmInput
             // 
-            this.passwordConfirmInput.Location = new System.Drawing.Point(305, 505);
-            this.passwordConfirmInput.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.passwordConfirmInput.Location = new System.Drawing.Point(159, 244);
             this.passwordConfirmInput.Name = "passwordConfirmInput";
-            this.passwordConfirmInput.Size = new System.Drawing.Size(266, 38);
+            this.passwordConfirmInput.Size = new System.Drawing.Size(135, 22);
             this.passwordConfirmInput.TabIndex = 6;
             // 
             // registerNewAccountButton
             // 
-            this.registerNewAccountButton.Location = new System.Drawing.Point(356, 878);
-            this.registerNewAccountButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.registerNewAccountButton.BackColor = System.Drawing.Color.Green;
+            this.registerNewAccountButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerNewAccountButton.ForeColor = System.Drawing.Color.White;
+            this.registerNewAccountButton.Location = new System.Drawing.Point(170, 421);
             this.registerNewAccountButton.Name = "registerNewAccountButton";
-            this.registerNewAccountButton.Size = new System.Drawing.Size(172, 58);
+            this.registerNewAccountButton.Size = new System.Drawing.Size(111, 39);
             this.registerNewAccountButton.TabIndex = 7;
             this.registerNewAccountButton.Text = "Register";
-            this.registerNewAccountButton.UseVisualStyleBackColor = true;
+            this.registerNewAccountButton.UseVisualStyleBackColor = false;
             this.registerNewAccountButton.Click += new System.EventHandler(this.registerNewAccountButton_Click);
             // 
             // registerHomeLabel
             // 
             this.registerHomeLabel.AutoSize = true;
             this.registerHomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerHomeLabel.Location = new System.Drawing.Point(158, 84);
-            this.registerHomeLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.registerHomeLabel.ForeColor = System.Drawing.Color.White;
+            this.registerHomeLabel.Location = new System.Drawing.Point(94, 13);
             this.registerHomeLabel.Name = "registerHomeLabel";
-            this.registerHomeLabel.Size = new System.Drawing.Size(544, 46);
+            this.registerHomeLabel.Size = new System.Drawing.Size(266, 25);
             this.registerHomeLabel.TabIndex = 8;
             this.registerHomeLabel.Text = "Register with Developer Bank";
             this.registerHomeLabel.Click += new System.EventHandler(this.label1_Click);
@@ -93,10 +95,9 @@
             // 
             this.registerUsernameLabel.AutoSize = true;
             this.registerUsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerUsernameLabel.Location = new System.Drawing.Point(206, 163);
-            this.registerUsernameLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.registerUsernameLabel.Location = new System.Drawing.Point(110, 67);
             this.registerUsernameLabel.Name = "registerUsernameLabel";
-            this.registerUsernameLabel.Size = new System.Drawing.Size(451, 46);
+            this.registerUsernameLabel.Size = new System.Drawing.Size(224, 25);
             this.registerUsernameLabel.TabIndex = 9;
             this.registerUsernameLabel.Text = "What is your username?";
             // 
@@ -104,10 +105,9 @@
             // 
             this.registrationPasswordLabel.AutoSize = true;
             this.registrationPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registrationPasswordLabel.Location = new System.Drawing.Point(206, 300);
-            this.registrationPasswordLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.registrationPasswordLabel.Location = new System.Drawing.Point(110, 138);
             this.registrationPasswordLabel.Name = "registrationPasswordLabel";
-            this.registrationPasswordLabel.Size = new System.Drawing.Size(446, 46);
+            this.registrationPasswordLabel.Size = new System.Drawing.Size(221, 25);
             this.registrationPasswordLabel.TabIndex = 10;
             this.registrationPasswordLabel.Text = "What is your password?";
             // 
@@ -115,10 +115,9 @@
             // 
             this.confirmPasswordLabel.AutoSize = true;
             this.confirmPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmPasswordLabel.Location = new System.Drawing.Point(210, 435);
-            this.confirmPasswordLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.confirmPasswordLabel.Location = new System.Drawing.Point(112, 208);
             this.confirmPasswordLabel.Name = "confirmPasswordLabel";
-            this.confirmPasswordLabel.Size = new System.Drawing.Size(442, 46);
+            this.confirmPasswordLabel.Size = new System.Drawing.Size(217, 25);
             this.confirmPasswordLabel.TabIndex = 11;
             this.confirmPasswordLabel.Text = "Confirm your password.";
             // 
@@ -126,45 +125,62 @@
             // 
             this.fullNameLabel.AutoSize = true;
             this.fullNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fullNameLabel.Location = new System.Drawing.Point(218, 568);
-            this.fullNameLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.fullNameLabel.Location = new System.Drawing.Point(116, 276);
             this.fullNameLabel.Name = "fullNameLabel";
-            this.fullNameLabel.Size = new System.Drawing.Size(434, 46);
+            this.fullNameLabel.Size = new System.Drawing.Size(214, 25);
             this.fullNameLabel.TabIndex = 12;
             this.fullNameLabel.Text = "What is your Full Name";
             // 
             // fullNameInput
             // 
-            this.fullNameInput.Location = new System.Drawing.Point(305, 631);
-            this.fullNameInput.Margin = new System.Windows.Forms.Padding(6);
+            this.fullNameInput.Location = new System.Drawing.Point(159, 309);
             this.fullNameInput.Name = "fullNameInput";
-            this.fullNameInput.Size = new System.Drawing.Size(266, 38);
+            this.fullNameInput.Size = new System.Drawing.Size(135, 22);
             this.fullNameInput.TabIndex = 13;
             // 
             // whatDepositMoneyLabel
             // 
             this.whatDepositMoneyLabel.AutoSize = true;
             this.whatDepositMoneyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.whatDepositMoneyLabel.Location = new System.Drawing.Point(77, 708);
-            this.whatDepositMoneyLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.whatDepositMoneyLabel.Location = new System.Drawing.Point(45, 348);
             this.whatDepositMoneyLabel.Name = "whatDepositMoneyLabel";
-            this.whatDepositMoneyLabel.Size = new System.Drawing.Size(775, 46);
+            this.whatDepositMoneyLabel.Size = new System.Drawing.Size(378, 25);
             this.whatDepositMoneyLabel.TabIndex = 14;
             this.whatDepositMoneyLabel.Text = "How much money do you want to deposit?";
             // 
             // moneyDepositInput
             // 
-            this.moneyDepositInput.Location = new System.Drawing.Point(305, 788);
-            this.moneyDepositInput.Margin = new System.Windows.Forms.Padding(6);
+            this.moneyDepositInput.Location = new System.Drawing.Point(159, 390);
             this.moneyDepositInput.Name = "moneyDepositInput";
-            this.moneyDepositInput.Size = new System.Drawing.Size(266, 38);
+            this.moneyDepositInput.Size = new System.Drawing.Size(135, 22);
             this.moneyDepositInput.TabIndex = 15;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Green;
+            this.panel1.Controls.Add(this.registerHomeLabel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(460, 48);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Green;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 472);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(460, 54);
+            this.panel2.TabIndex = 17;
             // 
             // RegistrationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 1019);
+            this.ClientSize = new System.Drawing.Size(460, 526);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.moneyDepositInput);
             this.Controls.Add(this.whatDepositMoneyLabel);
             this.Controls.Add(this.fullNameInput);
@@ -172,15 +188,16 @@
             this.Controls.Add(this.confirmPasswordLabel);
             this.Controls.Add(this.registrationPasswordLabel);
             this.Controls.Add(this.registerUsernameLabel);
-            this.Controls.Add(this.registerHomeLabel);
             this.Controls.Add(this.registerNewAccountButton);
             this.Controls.Add(this.passwordConfirmInput);
             this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.regUsernameInput);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "RegistrationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.RegistrationForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +216,7 @@
         private System.Windows.Forms.TextBox fullNameInput;
         private System.Windows.Forms.Label whatDepositMoneyLabel;
         private System.Windows.Forms.TextBox moneyDepositInput;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
