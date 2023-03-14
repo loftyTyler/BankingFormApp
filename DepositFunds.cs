@@ -3,40 +3,43 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
-using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using System.Globalization;
 
 namespace BankingFormApp
 {
-    public partial class CheckBalanceForm : Form
+    public partial class DepositFunds : Form
     {
-        public CheckBalanceForm()
+        public DepositFunds()
         {
             InitializeComponent();
         }
 
-        private void CheckBalanceForm_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void depositFundsButton_Click(object sender, EventArgs e)
         {
             string username = LoginForm.name;
             string password = LoginForm.password;
+            string depositAmt = depositFundsInput.Text;
+            decimal depositAmtDbl = Decimal.Parse(depositAmt);
 
-            //Need to add a balance loader of specific person balance
-            
+
             using (databaseTestingEntities db = new databaseTestingEntities())
             {
-                
+                //databaseTesting database = new databaseTesting();
                 var user = db.databaseTestings.FirstOrDefault(u => u.name == username && u.password == password);
                 if (user != null)
                 {
-                    decimal balance = user.accountBalance;
-                    balanceOutput.Text = balance.ToString("C", CultureInfo.CurrentCulture);
-                    
-
+                    user.accountBalance += depositAmtDbl;
+                    db.SaveChanges();
+                    MessageBox.Show(user.accountBalance.ToString("C", CultureInfo.CurrentCulture));
                 }
             }
         }

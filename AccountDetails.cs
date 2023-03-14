@@ -32,8 +32,19 @@ namespace BankingFormApp
         {
 
             string message = LoginForm.name;
-            MessageBox.Show(message);
             welcomeOutput.Text = message;
+        }
+
+        private void withdrawButton_Click(object sender, EventArgs e)
+        {
+            WithdrawFunds withdrawFunds = new WithdrawFunds();
+            withdrawFunds.ShowDialog();
+        }
+
+        private void depositButton_Click(object sender, EventArgs e)
+        {
+            DepositFunds depositFunds = new DepositFunds();
+            depositFunds.ShowDialog();
         }
     }
 }

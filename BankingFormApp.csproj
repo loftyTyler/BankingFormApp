@@ -89,6 +89,18 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity.cs" />
+    <Compile Include="DepositFunds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepositFunds.Designer.cs">
+      <DependentUpon>DepositFunds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WithdrawFunds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WithdrawFunds.Designer.cs">
+      <DependentUpon>WithdrawFunds.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +135,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CheckBalanceForm.resx">
       <DependentUpon>CheckBalanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepositFunds.resx">
+      <DependentUpon>DepositFunds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WithdrawFunds.resx">
+      <DependentUpon>WithdrawFunds.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
